@@ -48,20 +48,15 @@
 
   <!-- 2. This script tag can go anywhere in the <body> but **before** the RamenJS tag -->
   <script>
-    var randomId = Math.floor(Math.random() * 1000000000);
-    window.ramenSettings = {
-      organization_id: "567967557765624687c93f00",
-      user: {
-        name: "Ryan Angilly",
-        email: "ryan+" + randomId + "@ramen.is",
-        id: randomId,
-        created_at: Math.floor((new Date()) / 1000)
-      }
-    };
+    !function(){var e=window._ramen=window._ramen||[];if(!e.initialize){if(e.invoked)return void(window.console&&console.error&&console.error("Ramen snippet included twice."));e.invoked=!0,e.methods=["boot","ready","identify","group","track","page","reset","ask"],e.factory=function(r){return function(){var t=Array.prototype.slice.call(arguments);return t.unshift(r),e.push(t),e}};for(var r=0;r<e.methods.length;r++){var t=e.methods[r];e[t]=e.factory(t)}var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://cdn.ramen.is/assets/ramen.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o)}}();
+    _ramen.boot("567967557765624687c93f00");
+    _ramen.identify({
+      name: "Ryan Angilly",
+      email: "ryan+" + randomId + "@ramen.is",
+      id: randomId,
+      created_at: Math.floor((new Date()) / 1000)
+    });
   </script>
 
-  <!-- 3. This goes just before the closing </body> tag and **always after** where you set window.ramenSettings -->
-  <script src="https://cdn.ramen.is/assets/ramen.js" async>
-  </script>
 </body>
 </html>
